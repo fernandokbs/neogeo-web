@@ -18,7 +18,6 @@ RUN apt-get update && apt-get -y install git \
     x11vnc\
     xdotool \
     wget \
-    git \
     tar \
     supervisor \
     net-tools \
