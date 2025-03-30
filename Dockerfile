@@ -26,13 +26,13 @@ RUN apt-get update && apt-get -y install git \
     gnupg2 && \
     apt-get -y full-upgrade && apt-get clean && rm -rf /var/lib/apt/lists/*
 
+WORKDIR /root/
+
 ADD supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
-COPY ./emulator /root/emulator
+COPY ./roms .
 
 ENV DISPLAY :0
-
-WORKDIR /root/
 
 RUN add-apt-repository ppa:libretro/stable -y && apt-get update && apt-get install retroarch -y
 
